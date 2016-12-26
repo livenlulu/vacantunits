@@ -263,15 +263,17 @@
     }
 
     .nv-y {
-        display: none;
+   /*     display: none;*/
     }   
+    
+    .nv-zeroLine {
+     /*   display: none;*/
+    }
     .nv-x {
-        display: none;
+       color: white;
+       border-color: white;
     }   
 
-    .nv-zeroLine {
-        display: none;
-    }
 
     #sq1 {
         color: #4daf4a;

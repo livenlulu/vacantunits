@@ -186,7 +186,7 @@ nv.addGraph(function() {
     // 'rgb(55,126,184)'
     .color(['#C5766E', '#94362C', '#730B00'])
     .valueFormat(function(d){
-        return Math.round(d * 10)/10;
+        return "$" + Math.round(d * 10)/10;
       });
     ;
 
@@ -207,7 +207,7 @@ nv.addGraph(function() {
     // 'rgb(55,126,184)'
     .color(['#8FACA0', '#578F77', '#2D7556', '#0C5837', '#004025'])
     .valueFormat(function(d){
-        return Math.round(d * 10)/10;
+        return Math.round(d * 10)/10 + "%";
       });
     ;
 
@@ -233,7 +233,7 @@ function updateChart(f){
           "value" : f.vmedian_rent 
         } , 
         { 
-          "label" : "30% Of A Household's Total Income" , 
+          "label" : "30% Of HH Income" , 
           "value" : f.median_income / 12 * .3
         } ,
         { 
@@ -258,23 +258,23 @@ function updateChart2(f){
         //   "value" : f.median_income / 12
         // } , 
         { 
-          "label" : "White Population" , 
+          "label" : "White Pop." , 
           "value" : f.white
         } , 
         { 
-          "label" : "Black Population" , 
+          "label" : "Black Pop." , 
           "value" : f.black
         } ,
         { 
-          "label" : "Asian Population" , 
+          "label" : "Asian Pop." , 
           "value" : f.asian
         } ,
         { 
-          "label" : "Hispanic Population" , 
+          "label" : "Hispanic Pop." , 
           "value" : f.hispanic
         } ,
         { 
-          "label" : "Other Population" , 
+          "label" : "Other Pop." , 
           "value" : f.otherrace + f.americanin
         } 
       ]

@@ -184,7 +184,7 @@ nv.addGraph(function() {
     .margin({left:0,right:0})
     // .color(['rgb(77,175,74)','rgb(228,26,28)'])  
     // 'rgb(55,126,184)'
-    .color(['#C5766E', '#730B00'])
+    .color(['#C5766E', '#94362C', '#730B00'])
     .valueFormat(function(d){
         return Math.round(d * 10)/10;
       });
@@ -235,6 +235,10 @@ function updateChart(f){
         { 
           "label" : "30% Of A Household's Total Income" , 
           "value" : f.median_income / 12 * .3
+        } ,
+        { 
+          "label" : "Poverty Line" , 
+          "value" : 980.83
         } 
       ]
     d3.select('#chart svg')

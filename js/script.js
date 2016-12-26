@@ -101,7 +101,7 @@ var panOptions = {
   function style(feature) {
     return {
         fillColor: getColor(feature.properties.VALUE2),
-        weight: .1,
+        weight: .3,
         opacity: .7,
         color: 'white',
         dashArray: '0',

@@ -52,6 +52,13 @@
         line-height: 30px;
     }
 
+    h5 {
+        font-family: 'Lato';
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
     h6 {
         font-family: 'Lato';
         line-height: 18px;
@@ -66,7 +73,9 @@
     }
 
 
-
+    .modal-body {
+        padding-top: 10px;
+    }
 
     .myButton {
 	    margin: 3px;
@@ -88,8 +97,8 @@
     }
 
     #line2 {
-        margin-top:0px;
-        padding-top: 30px;
+        margin-top:10px;
+        padding-top: 20px;
         border-top: 1px solid #dfdfdf;
         border-width: 80%;
     }
@@ -219,6 +228,7 @@
         margin-left: 10px;
         margin-top: 5px;
         margin-bottom: 0px;
+        line-height: 13px;
     }
 
     #alink {

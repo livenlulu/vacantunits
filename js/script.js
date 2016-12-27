@@ -19,6 +19,7 @@ var med=0;
 
 var chart;
 var chart2;
+var chart3;
 
 var manhattan = [40.763121,-73.948288];
 var brooklyn = [40.637925,-73.948288];
@@ -75,13 +76,14 @@ var panOptions = {
 
   var geojson;
 
-  $.getJSON('data/va.geojson', function(data) {
+  $.getJSON('data/vad.geojson', function(data) {
     geojson = L.geoJson(data, {
     	style: style,
     	onEachFeature: onEachFeature
     }).addTo(map);
     updateChart(data.features[currid].properties)
     updateChart2(data.features[currid].properties)
+    updateChart3(data.features[currid].properties)
 
   });
 
@@ -139,6 +141,7 @@ var panOptions = {
     // try updatechart
     updateChart(e.target.feature.properties);
     updateChart2(e.target.feature.properties);
+    updateChart3(e.target.feature.properties);
 
     // console.log(layer.feature.properties.VALUE2);
     $('#side').html('<h4>Units available for rent on this block: ' + '<br><b><font size ="5" color="#08517C">' + layer.feature.properties.VALUE2 + '%' +'</font></b> ' + '</h4>');
@@ -226,6 +229,25 @@ nv.addGraph(function() {
   return chart2;
 });
 
+nv.addGraph(function() {
+  chart3 = nv.models.discreteBarChart()
+    .x(function(d) { return d.label })
+    .y(function(d) { return d.value })
+    .staggerLabels(true)
+    .showValues(true)
+    .margin({left:0,right:0})
+    // .color(['rgb(77,175,74)','rgb(228,26,28)'])  
+    // 'rgb(55,126,184)'
+    .color(['#E0AA63', '#D1821C'])
+    .valueFormat(function(d){
+        return Math.round(d * 10)/10;
+      });
+    ;
+
+  nv.utils.windowResize(chart3.update);
+
+  return chart3;
+});
 
 
 //Each bar represents a single discrete quantity.
@@ -292,6 +314,28 @@ function updateChart2(f){
     .datum(rentData)
     .transition().duration(500)
     .call(chart2);
+  
+}
+
+
+function updateChart3(f){
+
+  rentData[0].key = "vacancyrent";
+  rentData[0].values =
+    [
+        { 
+          "label" : "Median Male Age" , 
+          "value" : f.malemedage
+        } , 
+        { 
+          "label" : "Median Female Age" , 
+          "value" : f.femalemeda
+        } 
+      ]
+    d3.select('#chart3 svg')
+    .datum(rentData)
+    .transition().duration(500)
+    .call(chart3);
   
 }
 //bulletchart

@@ -76,7 +76,7 @@ var panOptions = {
 
   var geojson;
 
-  $.getJSON('data/vad.geojson', function(data) {
+  $.getJSON('data/var.geojson', function(data) {
     geojson = L.geoJson(data, {
     	style: style,
     	onEachFeature: onEachFeature
@@ -159,26 +159,7 @@ var panOptions = {
     });
   }
 
-// subway stations
-// $.getJSON('data/subwaystop.geojson', function(data2) {
-//   // console.log(data);
 
-// var subwaystations = {
-//     radius: 2,
-//     fillColor: "green",
-//     color: "#fff",
-//     weight: .5,
-//     opacity: 1,
-//     fillOpacity: 01,
-    
-// };
-
-// L.geoJson(data2, {
-//     pointToLayer: function (feature, latlng) {
-//         return L.circleMarker(latlng, subwaystations);
-//     }
-// }).addTo(map);
-// });
 
 //dropdown scroll
   $(".dropdown-menu li a").click(function(){
@@ -266,7 +247,7 @@ function updateChart(f){
         } , 
         { 
           "label" : "30% Of HH Income" , 
-          "value" : f.median_income / 12 * .3
+          "value" : f.vmr / 12 * .3
         } ,
         { 
           "label" : "Poverty Line" , 

@@ -281,12 +281,12 @@ svg.nvd3-svg {
 
 
 .nvd3 text {
-    font: normal 12px Dosis;
+    font: normal 10px Dosis;
     color: white;
 }
 
 .nvd3 .title {
-    font: bold 14px Dosis;
+    font: bold 12px Dosis;
     font-color: white;
 }
 

@@ -161,10 +161,10 @@ if (typeof(window) !== 'undefined') {
  * implementations in the future.
  */
 nv.dom.write = function(callback) {
-	if (window.fastdom !== undefined) {
-		return fastdom.write(callback);
-	}
-	return callback();
+    if (window.fastdom !== undefined) {
+        return fastdom.write(callback);
+    }
+    return callback();
 };
 
 /* Facade for queueing DOM read operations
@@ -174,10 +174,10 @@ nv.dom.write = function(callback) {
  * implementations in the future.
  */
 nv.dom.read = function(callback) {
-	if (window.fastdom !== undefined) {
-		return fastdom.read(callback);
-	}
-	return callback();
+    if (window.fastdom !== undefined) {
+        return fastdom.read(callback);
+    }
+    return callback();
 };/* Utility class to handle creation of an interactive layer.
  This places a rectangle on top of the chart. When you mouse move over it, it sends a dispatch
  containing the X-coordinate. It can also render a vertical line where the mouse is located.
@@ -341,20 +341,20 @@ nv.interactiveGuideline = function() {
 
                 // if user presses mouse down the layer, fire elementMouseDown
                 if (d3.event.type === 'mousedown') {
-                	dispatch.elementMouseDown({
-                		mouseX: mouseX,
-                		mouseY: mouseY,
-                		pointXValue: pointXValue
-                	});
+                    dispatch.elementMouseDown({
+                        mouseX: mouseX,
+                        mouseY: mouseY,
+                        pointXValue: pointXValue
+                    });
                 }
 
                 // if user presses mouse down the layer, fire elementMouseUp
                 if (d3.event.type === 'mouseup') {
-                	dispatch.elementMouseUp({
-                		mouseX: mouseX,
-                		mouseY: mouseY,
-                		pointXValue: pointXValue
-                	});
+                    dispatch.elementMouseUp({
+                        mouseX: mouseX,
+                        mouseY: mouseY,
+                        pointXValue: pointXValue
+                    });
                 }
             }
 
@@ -1769,7 +1769,7 @@ nv.utils.arrayEquals = function (array1, array2) {
                     if (showMaxMin) {
                         axisMaxMin = wrap.selectAll('g.nv-axisMaxMin')
                             .data(scale.domain());
-                       	axisMaxMin.enter().append('g').attr('class',function(d,i){
+                        axisMaxMin.enter().append('g').attr('class',function(d,i){
                                 return ['nv-axisMaxMin','nv-axisMaxMin-y',(i == 0 ? 'nv-axisMin-y':'nv-axisMax-y')].join(' ')
                         }).append('text')
                             .style('opacity', 0);
@@ -2418,7 +2418,7 @@ nv.models.boxPlotChart = function() {
                 if (staggerLabels) {
                     xTicks
                         .selectAll('text')
-                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 === 0 ? '5' : '17') + ')' })
+                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 === 0 ? '5' : '5') + ')' })
                 }
             }
 
@@ -2791,7 +2791,7 @@ nv.models.bulletChart = function() {
         , width = null
         , height = 55
         , tickFormat = null
-	, ticks = null
+    , ticks = null
         , noData = null
         , dispatch = d3.dispatch()
         ;
@@ -4122,7 +4122,7 @@ nv.models.discreteBarChart = function() {
     var discretebar = nv.models.discreteBar()
         , xAxis = nv.models.axis()
         , yAxis = nv.models.axis()
-	, legend = nv.models.legend()
+    , legend = nv.models.legend()
         , tooltip = nv.models.tooltip()
         ;
 
@@ -4130,7 +4130,7 @@ nv.models.discreteBarChart = function() {
         , width = null
         , height = null
         , color = nv.utils.getColor()
-	, showLegend = false
+    , showLegend = false
         , showXAxis = true
         , showYAxis = true
         , rightAlignYAxis = false
@@ -4213,7 +4213,7 @@ nv.models.discreteBarChart = function() {
                 .append('line');
 
             gEnter.append('g').attr('class', 'nv-barsWrap');
-	    gEnter.append('g').attr('class', 'nv-legendWrap');
+        gEnter.append('g').attr('class', 'nv-legendWrap');
 
             g.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -4239,7 +4239,7 @@ nv.models.discreteBarChart = function() {
             if (rightAlignYAxis) {
                 g.select(".nv-y.nv-axis")
                     .attr("transform", "translate(" + availableWidth + ",0)");
-            }	    
+            }       
 
             // Main Chart Component(s)
             discretebar
@@ -4276,7 +4276,7 @@ nv.models.discreteBarChart = function() {
                 if (staggerLabels) {
                     xTicks
                         .selectAll('text')
-                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 == 0 ? '5' : '17') + ')' })
+                        .attr('transform', function(d,i,j) { return 'translate(0,' + (j % 2 == 0 ? '5' : '5') + ')' })
                 }
 
                 if (rotateLabels) {
@@ -4352,7 +4352,7 @@ nv.models.discreteBarChart = function() {
         // simple options, just get/set the necessary values
         width:      {get: function(){return width;}, set: function(_){width=_;}},
         height:     {get: function(){return height;}, set: function(_){height=_;}},
-	showLegend: {get: function(){return showLegend;}, set: function(_){showLegend=_;}},
+    showLegend: {get: function(){return showLegend;}, set: function(_){showLegend=_;}},
         staggerLabels: {get: function(){return staggerLabels;}, set: function(_){staggerLabels=_;}},
         rotateLabels:  {get: function(){return rotateLabels;}, set: function(_){rotateLabels=_;}},
         wrapLabels:  {get: function(){return wrapLabels;}, set: function(_){wrapLabels=!!_;}},
@@ -4377,7 +4377,7 @@ nv.models.discreteBarChart = function() {
         color:  {get: function(){return color;}, set: function(_){
             color = nv.utils.getColor(_);
             discretebar.color(color);
-	    legend.color(color);
+        legend.color(color);
         }},
         rightAlignYAxis: {get: function(){return rightAlignYAxis;}, set: function(_){
             rightAlignYAxis = _;
@@ -4843,7 +4843,7 @@ nv.models.furiousLegend = function() {
         function setTextColor(d,i) {
             if(vers != 'furious') return '#000';
             if(expanded) {
-                return d.disengaged ? color(d,i) : '#fff';
+                return d.disengaged ? color(d,i) : '#000';
             } else if (!expanded) {
                 return !!d.disabled ? color(d,i) : '#fff';
             }
@@ -8147,7 +8147,7 @@ nv.models.multiBar = function() {
                         return "translate(" + x + "," + y + ")";
                     };
 
-                    var staggerUp = 5, staggerDown = 17;  //pixels to stagger by
+                    var staggerUp = 5, staggerDown = 5;  //pixels to stagger by
                     // Issue #140
                     xTicks
                         .selectAll("text")
@@ -9428,7 +9428,7 @@ nv.models.multiChart = function() {
                 tooltip
                     .duration(0)
                     .headerFormatter(function(d, i) {
-                    	return xAxis.tickFormat()(d, i);
+                        return xAxis.tickFormat()(d, i);
                     })
                     .valueFormatter(function(d, i) {
                         return yaxis.tickFormat()(d, i);
@@ -9448,7 +9448,7 @@ nv.models.multiChart = function() {
                 tooltip
                     .duration(100)
                     .headerFormatter(function(d, i) {
-                    	return xAxis.tickFormat()(d, i);
+                        return xAxis.tickFormat()(d, i);
                     })
                     .valueFormatter(function(d, i) {
                         return yaxis.tickFormat()(d, i);
@@ -9464,7 +9464,7 @@ nv.models.multiChart = function() {
                 tooltip
                     .duration(0)
                     .headerFormatter(function(d, i) {
-                    	return xAxis.tickFormat()(d, i);
+                        return xAxis.tickFormat()(d, i);
                     })
                     .valueFormatter(function(d, i) {
                         return yaxis.tickFormat()(d, i);
@@ -9485,7 +9485,7 @@ nv.models.multiChart = function() {
                 tooltip
                     .duration(0)
                     .headerFormatter(function(d, i) {
-                    	return xAxis.tickFormat()(d, i);
+                        return xAxis.tickFormat()(d, i);
                     })
                     .valueFormatter(function(d, i) {
                         return yaxis.tickFormat()(d, i);
@@ -10451,9 +10451,9 @@ nv.models.parallelCoordinatesChart = function () {
 
         var margin = { top: 0, right: 0, bottom: 0, left: 0 }
         , width = null
-		, height = null
+        , height = null
         , showLegend = true
-		, color = nv.utils.defaultColor()
+        , color = nv.utils.defaultColor()
         , state = nv.utils.state()
         , dimensionData = []
         , dimensionNames = []
@@ -10465,9 +10465,9 @@ nv.models.parallelCoordinatesChart = function () {
         , controlWidth = function () { return showControls ? 180 : 0 }
         ;
 
-	    //============================================================
-	
-		//============================================================
+        //============================================================
+    
+        //============================================================
         // Private Variables
         //------------------------------------------------------------
 
@@ -10614,47 +10614,47 @@ nv.models.parallelCoordinatesChart = function () {
                     .height(availableHeight)
                     .dimensionData(dimensionNames)
                     .displayBrush(displayBrush);
-		
-		        var parallelCoordinatesWrap = g.select('.nv-parallelCoordinatesWrap ')
+        
+                var parallelCoordinatesWrap = g.select('.nv-parallelCoordinatesWrap ')
                   .datum(data);
 
-		        parallelCoordinatesWrap.transition().call(parallelCoordinates);
-		  
-				//============================================================
+                parallelCoordinatesWrap.transition().call(parallelCoordinates);
+          
+                //============================================================
                 // Event Handling/Dispatching (in chart's scope)
                 //------------------------------------------------------------
                 //Display reset brush button
-		        parallelCoordinates.dispatch.on('brushEnd', function (active, hasActiveBrush) {
-		            if (hasActiveBrush) {
-		                displayBrush = true;
-		                dispatch.brushEnd(active);
-		            } else {
+                parallelCoordinates.dispatch.on('brushEnd', function (active, hasActiveBrush) {
+                    if (hasActiveBrush) {
+                        displayBrush = true;
+                        dispatch.brushEnd(active);
+                    } else {
 
-		                displayBrush = false;
-		            }
-		        });
+                        displayBrush = false;
+                    }
+                });
 
-		        legend.dispatch.on('stateChange', function(newState) {
-		            for(var key in newState) {
-		                state[key] = newState[key];
-		            }
-		            dispatch.stateChange(state);
-		            chart.update();
-		        });
+                legend.dispatch.on('stateChange', function(newState) {
+                    for(var key in newState) {
+                        state[key] = newState[key];
+                    }
+                    dispatch.stateChange(state);
+                    chart.update();
+                });
 
                 //Update dimensions order and display reset sorting button
-		        parallelCoordinates.dispatch.on('dimensionsOrder', function (e) {
-		            dimensionNames.sort(function (a, b) { return a.currentPosition - b.currentPosition; });
-		            var isSorted = false;
-		            dimensionNames.forEach(function (d, i) {
-		                d.currentPosition = i;
-		                if (d.currentPosition !== d.originalPosition)
-		                    isSorted = true;
-		            });
-		            dispatch.dimensionsOrder(dimensionNames, isSorted);
-		        });
+                parallelCoordinates.dispatch.on('dimensionsOrder', function (e) {
+                    dimensionNames.sort(function (a, b) { return a.currentPosition - b.currentPosition; });
+                    var isSorted = false;
+                    dimensionNames.forEach(function (d, i) {
+                        d.currentPosition = i;
+                        if (d.currentPosition !== d.originalPosition)
+                            isSorted = true;
+                    });
+                    dispatch.dimensionsOrder(dimensionNames, isSorted);
+                });
 
-				// Update chart from a state object passed to event handler
+                // Update chart from a state object passed to event handler
                 dispatch.on('changeState', function (e) {
 
                     if (typeof e.disabled !== 'undefined') {
@@ -10671,7 +10671,7 @@ nv.models.parallelCoordinatesChart = function () {
             return chart;
         }
 
-		//============================================================
+        //============================================================
         // Event Handling/Dispatching (out of chart's scope)
         //------------------------------------------------------------
 
@@ -10706,11 +10706,11 @@ nv.models.parallelCoordinatesChart = function () {
         parallelCoordinates.dispatch.on('elementMousemove.tooltip', function () {
             tooltip();
         });
-		 //============================================================
+         //============================================================
         // Expose Public Variables
         //------------------------------------------------------------
-		
-		// expose chart's sub-components
+        
+        // expose chart's sub-components
         chart.dispatch = dispatch;
         chart.parallelCoordinates = parallelCoordinates;
         chart.legend = legend;

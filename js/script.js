@@ -1,4 +1,4 @@
-var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',{
   attribution: ''
 });
 
@@ -87,25 +87,35 @@ var panOptions = {
 
 
   function getColor(d) {
-    return d > 90 ? '#08517C' :
-           d > 70  ? '#2975A2' :
-           d > 50  ? '#5799C0' :
+    return d > 90 ? '#073e5f' :
+           d > 70  ? '#216086' :
+           d > 50  ? '#4e89ad' :
            d > 30  ? '#9AC7E2' :
            // d > 35  ? '#E86464' :
            // d > 20  ? '#D97777' :
            // d > 10  ? '#EB9696' :
                      '#F1F8FC' ;
+
+        // return d > 90 ? '#08517C' :
+        //    d > 70  ? '#2975A2' :
+        //    d > 50  ? '#5799C0' :
+        //    d > 30  ? '#9AC7E2' :
+        //    // d > 35  ? '#E86464' :
+        //    // d > 20  ? '#D97777' :
+        //    // d > 10  ? '#EB9696' :
+        //              '#F1F8FC' ;
   }
+
 
 
   function style(feature) {
     return {
         fillColor: getColor(feature.properties.VALUE2),
         weight: .3,
-        opacity: .7,
+        opacity: .8,
         color: 'white',
         dashArray: '0',
-        fillOpacity: 0.7
+        fillOpacity: 0.8
     };
   }
 

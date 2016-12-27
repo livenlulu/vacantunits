@@ -261,7 +261,7 @@ function updateChart(f){
         //   "value" : f.median_income / 12
         // } , 
         { 
-          "label" : "Median Monthly Rent" , 
+          "label" : "Median Rent" , 
           "value" : f.vmedian_rent 
         } , 
         { 
@@ -290,23 +290,23 @@ function updateChart2(f){
         //   "value" : f.median_income / 12
         // } , 
         { 
-          "label" : "White Pop." , 
+          "label" : "White" , 
           "value" : f.white
         } , 
         { 
-          "label" : "Black Pop." , 
+          "label" : "Black" , 
           "value" : f.black
         } ,
         { 
-          "label" : "Asian Pop." , 
+          "label" : "Asian" , 
           "value" : f.asian
         } ,
         { 
-          "label" : "Hispanic Pop." , 
+          "label" : "Hispanic" , 
           "value" : f.hispanic
         } ,
         { 
-          "label" : "Other Pop." , 
+          "label" : "Other" , 
           "value" : f.otherrace + f.americanin
         } 
       ]

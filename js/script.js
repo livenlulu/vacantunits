@@ -1,4 +1,4 @@
-var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',{
   attribution: ''
 });
 
@@ -96,7 +96,7 @@ var panOptions = {
            // d > 35  ? '#E86464' :
            // d > 20  ? '#D97777' :
            // d > 10  ? '#EB9696' :
-                     '#F1F8FC' ;
+                     '#e1f3fd' ;
 
         // return d > 90 ? '#08517C' :
         //    d > 70  ? '#2975A2' :

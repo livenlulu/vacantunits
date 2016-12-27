@@ -17,24 +17,27 @@
     li { cursor: pointer; cursor: hand; }
 
     a {
-        color: #000;
+        color: #2975A2;
     }
 
     a:hover {
-        color: #2975A2;
+        color: #000;
         text-decoration: none;
 }
     }
 
     h1 {
-        font-size:15px;
+        font-size:13px;
+        font-weight: 700;
+
     }
 
     h2 {
         font-family: 'Lato';
-        font-size: 18px;
+        font-size: 12px;
         font-weight: 700;
         margin-top: 5px;
+        color: black;
     }
     h3 {
         padding-top: 10px;

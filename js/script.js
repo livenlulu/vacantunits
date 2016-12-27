@@ -141,7 +141,7 @@ var panOptions = {
     updateChart2(e.target.feature.properties);
 
     // console.log(layer.feature.properties.VALUE2);
-    $('#side').html('<h4>Units Available for Rent: ' + '<br><b><font size ="5" color="#08517C">' + layer.feature.properties.VALUE2 + '%' +'</font></b> ' + '</h4>');
+    $('#side').html('<h4>Units available for rent on this block: ' + '<br><b><font size ="5" color="#08517C">' + layer.feature.properties.VALUE2 + '%' +'</font></b> ' + '</h4>');
   	}
 
   function resetHighlight(e) {

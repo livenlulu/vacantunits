@@ -9,6 +9,7 @@
         width: 100%;
         font-size:12px;
         font-family: 'Lato';  
+
      /*   background-color: #242426;*/
 
     }
@@ -154,7 +155,7 @@
     }
 
     .row {
-        background-color: #242426;
+       /* background-color: #242426;*/
         margin-left: 0px;
         margin-right: 0px;
         color: #000;
@@ -304,6 +305,7 @@
     #rig2 {
         width: 70%;
         float: right;
+        background-color: #fff;
         height:100%;
        /* position: fixed;*/
     }
@@ -314,7 +316,7 @@
         width: 100%;
         float: right;
         position: fixed;
-        box-shadow: 0 0 10px rgba(0,0,0,0.55);
+        box-shadow: 0 0 10px gray;
     }
 
 

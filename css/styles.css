@@ -23,7 +23,7 @@
     a:hover {
         color: #000;
         text-decoration: none;
-}
+        background-color: transparent;
     }
 
     h1 {
@@ -84,6 +84,7 @@
 	    margin: 3px;
 	    padding: 8px;
 	    line-height: 15px;
+        font-size: 12px;
     }
 
     #side {
@@ -164,6 +165,24 @@
         border-radius: 3px;
         -webkit-background-clip: padding;
         border: 1px solid #b3b3b3;
+    }
+
+    #about-btn:hover {
+        background-color: transparent;
+        color:black;
+        font-weight: 900;
+    }
+
+    #fork:hover {
+        background-color: transparent;
+        color:black;
+        font-weight: 900;
+    }
+
+    #drop:hover {
+        background-color: transparent;
+        color:black;
+        font-weight: 900;
     }
 
     .row {
@@ -346,12 +365,17 @@
 
     .navbar-nav>li>a {
         padding-top: 19px;
-        }
+    }
 
     .navbar-brand {
         font-family: 'Lato';
         font-weight: 900;
        /* text-transform: uppercase;*/
+    }
+
+    .navbar-right>li>a:hover {
+        background-color: transparent;
+        color: black;
     }
 
     .navbar-right {
@@ -401,12 +425,7 @@
 
     }
 
-    @media screen and (max-width: 400px) {
 
-    .nv-x {
-       display:none;
-    }   
-}
 /*
 
 
